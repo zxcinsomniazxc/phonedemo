@@ -28,10 +28,6 @@ public class ApiClient {
                     .baseUrl("http://cinema.areas.su")
                     .build();
 
-
-
-
-
             return retrofit;
         }
 

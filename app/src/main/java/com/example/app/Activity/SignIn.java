@@ -2,6 +2,9 @@ package com.example.app.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -25,7 +28,7 @@ public class SignIn extends AppCompatActivity {
     EditText edEmail, edPass;
     Button btnSignIn;
     SharedPreferences sPref;
-
+    Dialog dialog;
     final String saveg = "key";
 
     @Override
@@ -42,14 +45,23 @@ public class SignIn extends AppCompatActivity {
             public void onClick(View v) {
                 if(TextUtils.isEmpty(edEmail.getText().toString())||TextUtils.isEmpty(edPass.getText().toString())){
                     String message = "Заполните все поля";
-                    Toast.makeText(SignIn.this, message,Toast.LENGTH_LONG).show();
+                    ShowAlertDialogWindow(message);
                 }else {
                     loginUser();
                 }
             }
         });
 
+    }
 
+    public void ShowAlertDialogWindow(String text){
+        final AlertDialog alertDialog = new AlertDialog.Builder(SignIn.this).setMessage(text).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        }).create();
+        alertDialog.show();
     }
 
     public void onClickSignUp (View view)

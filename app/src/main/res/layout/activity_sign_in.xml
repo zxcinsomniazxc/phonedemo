@@ -31,7 +31,7 @@
             android:layout_marginTop="20dp"
             android:ems="10"
             android:hint="Password"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName|textPassword" />
 
         <Button
             android:id="@+id/btnSignIn"
@@ -57,5 +57,6 @@
             app:backgroundTint="@color/white" />
 
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

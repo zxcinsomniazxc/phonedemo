@@ -2,6 +2,8 @@ package com.example.app.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -41,7 +43,7 @@ public class SignUp extends AppCompatActivity {
             public void onClick(View v) {
                 if(TextUtils.isEmpty(edEmail.getText().toString())||TextUtils.isEmpty(edPass.getText().toString())||TextUtils.isEmpty(edName.getText().toString())||TextUtils.isEmpty(edFirstName.getText().toString())){
                     String message = "Заполните все поля";
-                    Toast.makeText(SignUp.this, message,Toast.LENGTH_LONG).show();
+                    ShowAlertDialogWindow(message);
                 }
                 else {
 
@@ -50,6 +52,15 @@ public class SignUp extends AppCompatActivity {
 
             }
         });
+    }
+    public void ShowAlertDialogWindow(String text){
+        final AlertDialog alertDialog = new AlertDialog.Builder(SignUp.this).setMessage(text).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        }).create();
+        alertDialog.show();
     }
 
     public void onClickSignIn (View view)
