@@ -1,6 +1,7 @@
-package com.example.app;
+package com.example.app.API;
 
 import com.example.app.Service.LoginService;
+import com.example.app.Service.MovieService;
 import com.example.app.Service.RegisterService;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,6 +35,7 @@ public class ApiClient {
 
     public static RegisterService getRegister(){
         RegisterService registerService = getRetrofit().create(RegisterService.class);
+
         return registerService;
     }
 
@@ -41,5 +43,9 @@ public class ApiClient {
             LoginService loginService = getRetrofit().create(LoginService.class);
             return loginService;
     }
+    public static MovieService getMovie(){
+        MovieService movieService = getRetrofit().create(MovieService.class);
 
+        return  movieService;
+    }
 }

@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.app.ApiClient;
+import com.example.app.API.ApiClient;
 import com.example.app.R;
 import com.example.app.Request.RegisterRequest;
 import com.example.app.Response.RegisterResponse;
@@ -42,8 +42,8 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(TextUtils.isEmpty(edEmail.getText().toString())||TextUtils.isEmpty(edPass.getText().toString())||TextUtils.isEmpty(edName.getText().toString())||TextUtils.isEmpty(edFirstName.getText().toString())){
-                    String message = "Заполните все поля";
-                    ShowAlertDialogWindow(message);
+                 String message = "FWAFAWF";
+                 ShowAlertDialogWindow(message);
                 }
                 else {
 
@@ -53,15 +53,16 @@ public class SignUp extends AppCompatActivity {
             }
         });
     }
-    public void ShowAlertDialogWindow(String text){
-        final AlertDialog alertDialog = new AlertDialog.Builder(SignUp.this).setMessage(text).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+public void ShowAlertDialogWindow(String s){
+        AlertDialog alertDialog = new AlertDialog.Builder(SignUp.this).setMessage(s).setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.cancel();
             }
         }).create();
         alertDialog.show();
-    }
+}
+
 
     public void onClickSignIn (View view)
     {

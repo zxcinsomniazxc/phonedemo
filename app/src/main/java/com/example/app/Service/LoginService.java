@@ -12,7 +12,4 @@ public interface LoginService {
     @POST("/auth/login")
     Call<LoginResponse> loginUser(@Body LoginRequest loginRequest);
 
-
-
-
 }

@@ -12,10 +12,8 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.app.ApiClient;
+import com.example.app.API.ApiClient;
 import com.example.app.R;
 import com.example.app.Request.LoginRequest;
 import com.example.app.Response.LoginResponse;
@@ -47,10 +45,20 @@ public class SignIn extends AppCompatActivity {
                     String message = "Заполните все поля";
                     ShowAlertDialogWindow(message);
                 }else {
-                    loginUser();
+                    if (android.util.Patterns.EMAIL_ADDRESS.matcher(edEmail.getText().toString()).matches()){
+
+                        loginUser();
+
+                    }else{
+                        String message = "Введите коректный Email";
+                        ShowAlertDialogWindow(message);
+                    }
+
                 }
             }
         });
+
+
 
     }
 
@@ -85,7 +93,7 @@ public class SignIn extends AppCompatActivity {
                     SharedPreferences.Editor ed = sPref.edit();
                     int message = loginResponse.getToken();
                     ed.putString(saveg, String.valueOf(message));
-                    ed.commit();
+                    ed.apply();
 
 
 
@@ -93,15 +101,16 @@ public class SignIn extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 }else {
-                    String message = "Что-то пошло не так";
-                    Toast.makeText(SignIn.this, response.errorBody().toString(), Toast.LENGTH_LONG).show();
+                    String message = "Вы ввели неверные данные";
+                    ShowAlertDialogWindow(message);
+
                 }
             }
 
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
-                String message = t.getLocalizedMessage();
-                Toast.makeText(SignIn.this, message, Toast.LENGTH_LONG).show();
+                String message = "Вы ввели неверные данные";
+                ShowAlertDialogWindow(message);
             }
         });
     }
