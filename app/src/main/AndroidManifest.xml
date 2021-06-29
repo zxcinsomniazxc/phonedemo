@@ -11,9 +11,10 @@
         android:theme="@style/Theme.App"
         android:usesCleartextTraffic="true">
 
+        <activity android:name=".Activity.SignIn" />
         <activity android:name=".Activity.MainActivity"></activity>
         <activity android:name=".Activity.SignUp" />
-        <activity android:name=".Activity.SignIn">
+        <activity android:name=".Activity.LoadingScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

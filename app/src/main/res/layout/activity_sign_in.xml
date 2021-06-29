@@ -4,59 +4,91 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.SignIn">
+    android:background="#000000">
 
-    <LinearLayout
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="254dp"
+        android:layout_height="154dp"
+        android:layout_marginTop="95dp"
+        android:layout_marginBottom="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <ImageView
+        android:id="@+id/imageView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
+        android:layout_marginBottom="487dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:srcCompat="@drawable/worldcinema" />
 
-        <EditText
-            android:id="@+id/edEmail"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Email"
-            android:inputType="textPersonName" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/tvGoToSignUp"
+        android:layout_width="370dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/borderedittext"
+        android:text="Регистрация"
+        android:textColor="@color/theme"
+        app:iconPadding="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSignIn" />
 
-        <EditText
-            android:id="@+id/edPassword"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:ems="10"
-            android:hint="Password"
-            android:inputType="textPersonName|textPassword" />
+    <EditText
+        android:id="@+id/edEmailSignIn"
+        android:layout_width="370dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="84dp"
+        android:background="@drawable/borderedittext"
+        android:ems="10"
+        android:hint="E-mail"
+        android:inputType="textPersonName"
+        android:padding="8dp"
+        android:textColor="#D5D5D5"
+        android:textColorHint="@color/textcolorgrey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
-        <Button
-            android:id="@+id/btnSignIn"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="300dp"
-            android:background="@drawable/button"
-            android:text="ВОЙТИ"
-            android:textColor="@color/black"
-            app:backgroundTint="@color/white" />
+    <EditText
+        android:id="@+id/edPasswordSignIn"
+        android:layout_width="370dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/borderedittext"
+        android:ems="10"
+        android:hint="Пароль"
+        android:inputType="textPersonName"
+        android:padding="8dp"
+        android:password="true"
+        android:textColor="#D5D5D5"
+        android:textColorHint="@color/textcolorgrey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edEmailSignIn" />
 
-        <Button
-            android:id="@+id/btnSignUp"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/button"
-            android:onClick="onClickSignUp"
-            android:text="ЗАРЕГИСТРИРОВАТЬСЯ"
-            android:textColor="@color/black"
-            app:backgroundTint="@color/white" />
-
-    </LinearLayout>
-
-
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSignIn"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
+        android:height="50dp"
+        android:background="@drawable/bordercolorededittext"
+        android:backgroundTintMode="src_in"
+        android:text="Войти"
+        android:textColor="@color/white"
+        android:textColorHint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edPasswordSignIn" />
 </androidx.constraintlayout.widget.ConstraintLayout>
