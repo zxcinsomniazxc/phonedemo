@@ -1,4 +1,4 @@
-cd.opackage com.example.app.Activity;
+package com.example.app.Activity;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
